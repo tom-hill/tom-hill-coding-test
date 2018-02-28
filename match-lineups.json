@@ -1,0 +1,216 @@
+{
+    "lineups": [{
+            "team": "Tottenham Hotspur",
+            "formation": "442",
+            "players": [{
+                    "name": "Hugo Lloris",
+                    "formation_place": 1,
+                    "type": "Goalkeeper",
+                    "position": "GK"
+                },
+                {
+                    "name": "Serge Aurier",
+                    "formation_place": 2,
+                    "type": "Defender",
+                    "position": "RB"
+                },
+                {
+                    "name": "Toby Alderweireld",
+                    "formation_place": 5,
+                    "type": "Defender",
+                    "position": "CB"
+                },
+                {
+                    "name": "Jan Vertonghen",
+                    "formation_place": 6,
+                    "type": "Defender",
+                    "position": "CB"
+                },
+                {
+                    "name": "Ben Davies",
+                    "formation_place": 3,
+                    "type": "Defender",
+                    "position": "LB"
+                },
+                {
+                    "name": "Christian Eriksen",
+                    "formation_place": 7,
+                    "type": "Midfielder",
+                    "position": "RM"
+                },
+                {
+                    "name": "Eric Dier",
+                    "formation_place": 4,
+                    "type": "Midfielder",
+                    "position": "CM"
+                },
+                {
+                    "name": "Mousa Dembele",
+                    "formation_place": 8,
+                    "type": "Midfielder",
+                    "position": "CM"
+                },
+                {
+                    "name": "Dele Alli",
+                    "formation_place": 11,
+                    "type": "Midfielder",
+                    "position": "LM"
+                },
+                {
+                    "name": "Harry Kane",
+                    "formation_place": 9,
+                    "type": "Forward",
+                    "position": "FW"
+                },
+                {
+                    "name": "Fernando Llorente",
+                    "formation_place": 10,
+                    "type": "Forward",
+                    "position": "FW"
+                }
+            ]
+        },
+        {
+            "team": "Tottenham Hotspur",
+            "formation": "3421",
+            "players": [{
+                    "name": "Hugo Lloris",
+                    "formation_place": 1,
+                    "type": "Goalkeeper",
+                    "position": "GK"
+                },
+                {
+                    "name": "Serge Aurier",
+                    "formation_place": 2,
+                    "type": "Defender",
+                    "position": "RWB"
+                },
+                {
+                    "name": "Toby Alderweireld",
+                    "formation_place": 5,
+                    "type": "Defender",
+                    "position": "CB"
+                },
+                {
+                    "name": "Jan Vertonghen",
+                    "formation_place": 6,
+                    "type": "Defender",
+                    "position": "CB"
+                },
+                {
+                    "name": "Ben Davies",
+                    "formation_place": 3,
+                    "type": "Defender",
+                    "position": "LWB"
+                },
+                {
+                    "name": "Christian Eriksen",
+                    "formation_place": 7,
+                    "type": "Midfielder",
+                    "position": "RM"
+                },
+                {
+                    "name": "Eric Dier",
+                    "formation_place": 4,
+                    "type": "Defender",
+                    "position": "CB"
+                },
+                {
+                    "name": "Mousa Dembele",
+                    "formation_place": 8,
+                    "type": "Midfielder",
+                    "position": "CM"
+                },
+                {
+                    "name": "Dele Alli",
+                    "formation_place": 11,
+                    "type": "Midfielder",
+                    "position": "AM"
+                },
+                {
+                    "name": "Harry Kane",
+                    "formation_place": 9,
+                    "type": "Forward",
+                    "position": "FW"
+                },
+                {
+                    "name": "Heung Min Son",
+                    "formation_place": 10,
+                    "type": "Forward",
+                    "position": "AM"
+                }
+            ]
+        },
+        {
+            "team": "Tottenham Hotspur",
+            "formation": "4411",
+            "players": [{
+                    "name": "Hugo Lloris",
+                    "formation_place": 1,
+                    "type": "Goalkeeper",
+                    "position": "GK"
+                },
+                {
+                    "name": "Serge Aurier",
+                    "formation_place": 2,
+                    "type": "Defender",
+                    "position": "RB"
+                },
+                {
+                    "name": "Toby Alderweireld",
+                    "formation_place": 5,
+                    "type": "Defender",
+                    "position": "CB"
+                },
+                {
+                    "name": "Jan Vertonghen",
+                    "formation_place": 6,
+                    "type": "Defender",
+                    "position": "CB"
+                },
+                {
+                    "name": "Ben Davies",
+                    "formation_place": 3,
+                    "type": "Defender",
+                    "position": "LB"
+                },
+                {
+                    "name": "Christian Eriksen",
+                    "formation_place": 7,
+                    "type": "Midfielder",
+                    "position": "RM"
+                },
+                {
+                    "name": "Eric Dier",
+                    "formation_place": 4,
+                    "type": "Midfielder",
+                    "position": "CM"
+                },
+                {
+                    "name": "Mousa Dembele",
+                    "formation_place": 8,
+                    "type": "Midfielder",
+                    "position": "CM"
+                },
+                {
+                    "name": "Heung Min Son",
+                    "formation_place": 11,
+                    "type": "Midfielder",
+                    "position": "LM"
+                },
+                {
+                    "name": "Harry Kane",
+                    "formation_place": 9,
+                    "type": "Forward",
+                    "position": "FW"
+                },
+                {
+                    "name": "Dele Alli",
+                    "formation_place": 10,
+                    "type": "Midfielder",
+                    "position": "AM"
+                }
+            ]
+        }
+    ]
+}
