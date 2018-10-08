@@ -1,0 +1,46 @@
+{
+  "name": "rush-coding-test",
+  "version": "1.0.0",
+  "description": "The front-end coding test for Rush Partners job application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./tools/webpack.config.js --env prod",
+    "build:dev": "webpack --config ./tools/webpack.config.js",
+    "clean:all": "rm -rf node_modules && rm -rf ./dist/*",
+    "clean": "rm -rf ./dist/*",
+    "start:server": "node ./tools/server/",
+    "start": "npm run clean && npm run build && npm run start:server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tom-hill/tom-hill-coding-test.git"
+  },
+  "author": "Tom Hill <tp.hill.uk@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tom-hill/tom-hill-coding-test/issues"
+  },
+  "homepage": "https://github.com/tom-hill/tom-hill-coding-test#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.4",
+    "chai": "^4.2.0",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.6.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mocha": "^5.2.0",
+    "sass-lint": "^1.12.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
