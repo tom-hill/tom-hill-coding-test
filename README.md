@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/tom-hill/tom-hill-coding-test/branch/master/graph/badge.svg?token=TaGLEJiYup)](https://codecov.io/gh/tom-hill/tom-hill-coding-test)
+
 # Front-end Coding Challenge
 
 This application is the Front-end coding challenge completed for Rush. The purpose of this project is to run a single page web application that will display the lineup for a football team. This team will be auto updated when new data is pushed to it, and these changes will be reflected in the view.
