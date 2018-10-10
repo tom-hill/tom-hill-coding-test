@@ -1,0 +1,1 @@
+export const NEW_LINEUPS_RECEIVED = 'lineups/NEW_LINEUPS_RECEIVED';

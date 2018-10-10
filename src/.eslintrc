@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "eslint-config-airbnb-base",
+    "eslint-config-airbnb-base/rules/strict"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "no-underscore-dangle": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.js"],
+      "rules": {
+        "no-unused-expressions": 0,
+        "no-undef": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+export const APP_INITIALISED = 'global/APP_INITIALISED';
+export const APP_INITIALISATION_ERROR = 'global/APP_INITIALISATION_ERROR';
+export const SLOW_CONNECTION = 'global/SLOW_CONNECTION';
