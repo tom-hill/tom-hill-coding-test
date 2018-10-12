@@ -2,23 +2,38 @@ import React from 'react';
 import sinon from 'sinon';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import { Index } from '../index';
+import { IndexComponent as Index } from '../index';
 import LoadingView from '../../LoadingView/LoadingView';
 import LineupView from '../../LineupView/LineupView';
 
 describe('<Index />', () => {
+  const bind = sinon.spy();
+  const subscribe = sinon.stub().callsFake(() => ({
+    bind,
+  }));
   const props = {
-    initialiseApplication: sinon.spy(),
+    loading: true,
+    lineupData: {},
+    initialiseApplication: sinon.stub().resolves({
+      subscribe,
+    }),
+    newLineupsReceived: sinon.spy(),
   };
 
-  it('always renders', () => {
+  describe('First Mount', () => {
     const wrapper = shallow(<Index {...props} />);
-    expect(wrapper.children().length).to.be.above(0);
-  });
+    it('calls initialiseApplication on first mount', () => {
+      expect(props.initialiseApplication.called).to.equal(true);
+    });
 
-  it('calls initialiseApplication on first mount', () => {
-    shallow(<Index {...props} />);
-    expect(props.initialiseApplication.called).to.equal(true);
+    it('subscribes to pusher after mount', () => {
+      expect(subscribe.called).to.equal(true);
+    });
+
+    it('binds to the pusher event subscription', () => {
+      expect(bind.called).to.equal(true);
+    });
+    wrapper.unmount();
   });
 
   it('renders <LoadingView /> by default', () => {
@@ -27,7 +42,11 @@ describe('<Index />', () => {
   });
 
   it('renders <LineupView /> when loading prop is false', () => {
-    const wrapper = shallow(<Index {...props} loading={false} lineupData={{ team: 'data' }} />);
-    expect(wrapper.find(LineupView)).to.have.lengthOf(1);
+    const newProps = Object.assign({}, props, {
+      loading: false,
+      lineupData: { team: 'data' },
+    });
+    const wrapper = shallow(<Index {...newProps} />);
+    expect(wrapper.find(LineupView).exists()).to.equal(true);
   });
 });

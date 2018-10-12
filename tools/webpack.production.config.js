@@ -1,5 +1,8 @@
+const webpack = require('webpack');
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
@@ -12,10 +15,15 @@ const scssLintPlugin = new StyleLintPlugin({
   syntax: 'scss',
 });
 
+const copyAssets = new CopyWebpackPlugin([
+  { from: './src/assets', to: './assets' }
+]);
+
 module.exports = {
+  mode: 'production',
   output: {
-    path: __dirname + '../../dist',
-    filename: 'app.js',
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'app.js'
   },
   module: {
     rules: [
@@ -47,8 +55,15 @@ module.exports = {
       },
     ],
   },
-  plugins: [htmlPlugin, scssLintPlugin],
+  plugins: [new webpack.DefinePlugin({
+    'process.env':{
+      'NODE_ENV': JSON.stringify('production')
+    }
+  }), htmlPlugin, scssLintPlugin, copyAssets],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  externals: {
+    'pusher': "Pusher"
+  }
 };

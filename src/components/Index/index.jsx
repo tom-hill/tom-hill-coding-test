@@ -2,18 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { initialiseApplication } from '../../redux/_global/global.actions';
+import { newLineupsReceived } from '../../redux/lineups/lineups.actions';
 
 import LoadingView from '../LoadingView/LoadingView';
 import LineupView from '../LineupView/LineupView';
 
-export class Index extends React.Component {
+import * as Consts from '../constants';
+
+export class IndexComponent extends React.Component {
   componentDidMount() {
-    this.props.initialiseApplication();
+    const updateLineups = this.props.newLineupsReceived;
+
+    this.props.initialiseApplication().then((pusher) => {
+      const channel = pusher.subscribe(Consts.LINEUPS.Channel);
+
+      channel.bind(Consts.LINEUPS.Event, updateLineups);
+    });
   }
 
   renderLoadingView = () => (<LoadingView />);
 
-  renderLineupView = (team, i) => (<LineupView data={this.props.lineupData[team]} key={`${team}_${i}`} />);
+  renderLineupView = (team, i) => (
+    <LineupView data={this.props.lineupData[team]} key={`${team}_${i}`} />);
 
   render() {
     const { loading } = this.props;
@@ -27,29 +37,33 @@ export class Index extends React.Component {
   }
 }
 
-Index.propTypes = {
+IndexComponent.propTypes = {
   loading: PropTypes.bool,
   lineupData: PropTypes.object,
   initialiseApplication: PropTypes.func.isRequired,
+  newLineupsReceived: PropTypes.func.isRequired,
 };
 
-Index.defaultProps = {
+IndexComponent.defaultProps = {
   loading: true,
   lineupData: {},
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   loading: state.global.loading,
   lineupData: state.lineups,
 });
 
 const mapDispatchToProps = dispatch => ({
   initialiseApplication: () => {
-    dispatch(initialiseApplication());
+    return dispatch(initialiseApplication());
+  },
+  newLineupsReceived: (data) => {
+    return dispatch(newLineupsReceived(data));
   },
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Index);
+)(IndexComponent);

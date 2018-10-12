@@ -1,5 +1,7 @@
 import { get } from '../../services/api.service';
 import * as Type from '../constants';
+import Pusher from 'pusher';
+import * as Consts from '../../components/constants';
 
 export const appInitialised = () => ({
   type: Type.APP_INITIALISED,
@@ -28,6 +30,9 @@ export function initialiseApplication() {
         clearTimeout(timeout);
         dispatch(newLineupReceived(data));
         dispatch(appInitialised());
+        return new Pusher(Consts.PUSHER.APP_KEY, {
+          cluster: Consts.PUSHER.APP_CLUSTER,
+        });
       })
       .catch((e) => {
         clearTimeout(timeout);

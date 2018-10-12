@@ -6,6 +6,10 @@ import sinon from 'sinon';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
+import hook from 'css-modules-require-hook';
+import sass from 'node-sass';
+import path from 'path';
+
 chai.use(chaiEnzyme());
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -23,3 +27,16 @@ global.shallow = Enzyme.shallow;
 global.navigator = {
   userAgent: 'node.js',
 };
+
+hook({
+  extensions: ['.scss'],
+  generateScopedName: '[name]_[local]',
+  preprocessCss: (css, filepath) => {
+    const scss = sass.renderSync({
+      data: css,
+      includePaths: [path.resolve(filepath, '..')]
+    });
+
+    return scss.css;
+  }
+});

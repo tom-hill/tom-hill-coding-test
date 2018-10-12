@@ -1,0 +1,30 @@
+.table {
+	border: 0 solid #fff;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+
+	tr:nth-child(even) {
+		background: #eaeaea;
+	}
+
+	th,
+	td {
+		border: 0.0625rem solid #fff;
+		padding: 0.125rem;
+	}
+
+	> thead {
+		border-bottom: 0.125rem solid #333;
+
+		th {
+			font-weight: bold;
+			text-align: left;
+			border-left: 0.0625rem solid #333;
+
+			&:first-child {
+				border-left: 0;
+			}
+		}
+	}
+}

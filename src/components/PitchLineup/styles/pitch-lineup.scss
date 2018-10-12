@@ -1,0 +1,14 @@
+.pitch {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	margin: 0;
+	background: url('/assets/pitch-bg.png') repeat;
+
+	.row {
+		display: flex;
+		align-items: center;
+		align-content: stretch;
+		padding: 0;
+	}
+}
